@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	
+	<head>
+		<title>Tushar Kanwal - Blogs</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a  class="logo">Tushar Kanwal</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<li class="active"><a href="generic.html">Blog</a></li>
+							<li><a href="elements.html">Resume</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://github.com/tusharkanwal" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							<!--<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>-->
+							<li><a href="mailto:tusharkanwal01@gmail.com" class="icon brands alt fa-google"><span class="label">Facebook</span></a></li>
+							<li><a href="https://www.linkedin.com/in/tusharkanwal/" class="icon brands alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+							
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									
+									<h2 id="CovidSpread"> <a href="https://public.tableau.com/views/Covid-19Cases_16429384417470/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank:"">Building the Covid-19 spread tableau dashboard</a></h2>
+									
+									<p> A Tableau Dashboard created to display the spread of Covid-19 by country along with week by week spread and loss of life <br />since January 2020 till January 2022.</p>
+								</header>
+								<div class="image main"><img src="images/dash1.png" alt="" /></div>
+								<header><h2><u>Introduction:</u></h2></header>
+								<p>Covid-19 Pandemic has been raging throughout the world for over 1.5 years, and has affected everyone's life in one way or another. In today's data driven world, this means creation of new data, which can be utilized to gather insights about this pandemic that we have been facing for such an extended period of time. </p>
+									
+								<p>Combining Tableau's Visualization Prowess with the constantly growing data on Covid-19, in a dashboard will help us gain a bird's-eye view of the spread of the virus as it spread week-by-week along with how much loss of life this terrible pandemic has caused and the most affected countries.
+									</p>
+								<header><h2><u>Getting the Data:</u></h2></header>
+								<header>The data has been taken from <a href=https://www.tableau.com/covid-19-coronavirus-data-resources target="_blank"> Tableau's Covid-19 Datahub </a> which provides a well maintained and daily updated Covid-19 data. Data from January 2020 to January 2022 was used for this project. 
+									<p><b>Note:</b> I have slightly pre-processed the data using Excel to make it easier to visualize and remove a few bad/unnecessary data points for the purpose of better visualizations.
+									</p>
+								</header>
+							<header><h2><u>Planning the Dashboard:</u></h2></header>
+							<p>A key step for building an effective dashboard is planning in advance. A few important metrics I would like this dashboard to reflect are:
+								<ul>
+								<li> Total number of cases and lives lost.</li>
+								<li>Countries with the greatest number of cases and lives lost </li>
+								<li>A Map to show increasing number of cases per country. </li>
+							</ul>
+							This may require around 6-7 visualizations, using the most appropriate type for each metric.</p>
+							<header><h2><u>Getting started with visualization:</u></h2></header>
+							<p>
+								We begin this project by importing the Covid-19 data into Tableau. In this project, we used a web data connector available on <a href="https://data.world/"  target="_blank">data.world</a>. To connect, open tableau and click “Web Data Connector”. A window will open, you need to enter the URL of your data and the data will be successfully imported into Tableau. Once, you have your data in Tableau, you can check for data integrity, change column types, filter out the data that you don't require and do all the prep work that is needed.</p>
+							<p>Now, we can start with the visualization. The first sheet that we will create will have <b>Total Number of Cases</b> in it, with the report date added to the pages side bar so we are able to see the increased number of total cases as they grew per week. </p>
+							<p>To do this, the <b>“New Positive Cases Count”</b> from the value field needs to be dragged and dropped to the <b>Text mark type</b> which will display the total number of positive cases. The <b>“report date”</b> field needs to be added to the pages sidebar and changed from year, to weeks view after which a table calculation is added to <b>New Positive Cases Count</b> values as a running sum of values based on the week of report date so, the total number of cases update depending on the week we selected. We can apply formatting as desired and our first sheet is complete.</p>
+							
+							<span class="image fit"><img src="images/1.png" alt="" ></span>
+
+							<hr/>
+							
+							<p>The second sheet will have the <b>Total Number of Deaths</b>. The process to create this sheet is the same the previous sheet so, we can either follow the process again, or we can right click the first sheet tab and click <b>duplicate</b> which will copy the sheet and we can easily switch out the <b>“New Positive Cases count”</b> with <b>“New Deaths Count”</b> and add the table calculation. Apply formatting as required and another sheet is ready.</p>
+
+							<span class="image fit"><img src="images/2.png" alt="" /></span>
+
+							<hr>
+
+							<p>The third sheet will visualize the <b>per week growth in the Total Number of Cases</b>. For this, drag the <b>"Report Date"</b> field to the columns shelf and change it from year to weeks. Now, drag <b>“New Positive Cases Count”</b> to the Rows shelf twice as this will generate two separate charts. Apply the same table calculations as we did in the first sheet to both the values in rows and change one of the marks to <b>Line</b> and other to <b>Area</b>. Click on the right side header of either chart and select <b>Dual axis</b>, this will combine the two charts into one. Right click the header on left and hide it as it is not required. After all this is done drag the <b>"Report Date"</b> to pages side bar and change to weeks as done in the previous sheets. Apply formatting of your liking and your sheet is ready.</p>
+
+							<span class="image fit"><img src="images/3.png" alt="" /></span>
+
+							<hr>
+
+							<p>
+								For the next sheet, we want to create the same lollipop chart as above for <b>Total Number of Deaths</b>. The procedure to create this sheet is the same as above, we just need to replace the Rows shelf with <b>“New Deaths Count”</b> and apply the table calculations, after formatting this sheet will also be ready.
+								</p>
+
+								<span class="image fit"><img src="images/4.png" alt="" /></span>
+
+								<hr>
+
+								<p>Now, we will be creating a sheet to show the countries which had the<span class="image right"><img src="images/7.1.png" alt="" /></span> <b>Most Number of Cases</b>, this will also carry the <b>"Report Date"</b> in the pages side bar like all the previous sheets we have made so far. In order to make this sheet we need a calculated field for the rankings. To do this right click in the left sidebar and click <b>create calculated field</b>, give it a name and enter the following formula <code>RANK(SUM([People Positive Cases Count]),'desc') </code>and click ok. Drag and drop this new field to the rows shelf. Now we need to add a table calculation to this, select <b>computing using Specific Dimesnions</b> and check the <b>Country Short Name</b>. We need a table calculation on <b>New Positive Cases Count </b>too, set calculation type to <b>running Total SUM</b> and <b>compute using specific dimension</b> and choose <b>week of Report Date</b>. </p>
+								<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-5"><span class="image fit"><img src="images/7.2.png" alt="" /></span></div>
+											<div class="col-2"><span class="image fit"><img src="" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/7.3.png" alt="" /></span></div></div>
+
+								<p></p><p>Press and hold the ctrl key and drag the <b>Rank</b> field to the <b>filters</b> shelf. Click edit filter and select numbers 1 to 10 or as many as you want to show. Add desired formatting and the sheet is complete.</p>
+
+								<span class="image fit"><img src="images/7.png" alt="" /></span>
+								
+								<hr>
+								
+								<p>In the next sheet we calculate the countries with <b>Most Number of Deaths,</b> which will be done in the same manner as above, except in place of <b>"New Positive Cases Count"</b> we will use <b>"New Death Count"</b>in its place. Create a <b>new calculated rank</b> field and performed the calculation in the same manner as the previous sheet. After everything is done the sheet will be ready and we can move on to the last sheet.</p>
+							
+								<span class="image fit"><img src="images/6.png" alt="" /></span>
+
+								<hr>
+
+									<p>In the last sheet we will be showing the <b>Spread of Virus per Country</b> and how it grew as weeks passed by. Making this is fairly simple, drag and drop the <b>"Country Short Name"</b> field to the visualization area and Tableau will automatically generate a map and plot all the points on it. Next we want to add the <b>"New positive Cases Count"</b> to the <b>Size</b> mark so we can see which country had more cases, we also need to perform a table calculation on the field in the same manner we did in the previous sheets where we have used the  <b>"New Positive Case Count"</b>field. After that, add the <b>"Report Date"</b> to the pages side bar and select the weeks,format as desired and the sheet is ready.</p>
+
+									<span class="image fit"><img src="images/5.png" alt="" /></span>
+
+									<hr>
+									 
+									<p>Finally, we can create the dashboard with all the sheets that we have created so far.  You can decide if you want to use the titled format or floating windows for arranging the sheets in the dashboard. Remove any unwanted filters/legends and edit the dashboard as desired and The <b>Covid-19 spread Dashboard</b> is ready.</p>
+
+									<span class="image fit"><img src="images/8.png" alt="" /></span>
+									
+
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+						
+				<section class="alt">
+					<h2>Get in Touch!</h2>
+					<h3>Address</h3>
+					<p>New Delhi, India</p>
+			
+				
+				<section>
+					<h3>Email</h3>
+					<p><a href="mailto:tusharkanwal01@gmail.com">tusharkanwal01@gmail.com</a></p>
+				</section>
+				<section>
+					<h3>Social</h3>
+					<ul class="icons alt">
+						<li><a href="https://github.com/tusharkanwal" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+						<!--<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>-->
+						<li><a href="mailto:tusharkanwal01@gmail.com" class="icon brands alt fa-google"><span class="label">Email</span></a></li>
+						<li><a href="https://www.linkedin.com/in/tusharkanwal/" class="icon brands alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+						
+					</ul>
+				</section>
+			</section>
+		</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+					
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
