@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	
 	<head>
@@ -99,7 +94,7 @@
 
 								<hr>
 
-								<p>Now, we will be creating a sheet to show the countries which had the<span class="image right"><img src="images/7.1.png" alt="" /></span> <b>Most Number of Cases</b>, this will also carry the <b>"Report Date"</b> in the pages side bar like all the previous sheets we have made so far. In order to make this sheet we need a calculated field for the rankings. To do this right click in the left sidebar and click <b>create calculated field</b>, give it a name and enter the following formula <code>RANK(SUM([People Positive Cases Count]),'desc') </code>and click ok. Drag and drop this new field to the rows shelf. Now we need to add a table calculation to this, select <b>computing using Specific Dimesnions</b> and check the <b>Country Short Name</b>. We need a table calculation on <b>New Positive Cases Count </b>too, set calculation type to <b>running Total SUM</b> and <b>compute using specific dimension</b> and choose <b>week of Report Date</b>. </p>
+								<p>Now, we will be creating a sheet to show the countries which had the<span class="image right"><img src="images/7.1.png" alt="" /></span> <b>Most Number of Cases</b>, this will also carry the <b>"Report Date"</b> in the pages side bar like all the previous sheets we have made so far. In order to make this sheet we need a calculated field for the rankings. To do this right click in the left sidebar and click <b>create calculated field</b>, give it a name and enter the following formula <code>RANK(SUM([People Positive Cases Count]),'desc') </code>and click ok. Drag and drop this new field to the rows shelf. Now we need to add a table calculation to this, select <b>computing using Specific Dimensions</b> and check the <b>Country Short Name</b>. We need a table calculation on <b>New Positive Cases Count </b>too, set calculation type to <b>running Total SUM</b> and <b>compute using specific dimension</b> and choose <b>week of Report Date</b>. </p>
 								<div class="box alt">
 										<div class="row gtr-50 gtr-uniform">
 											<div class="col-5"><span class="image fit"><img src="images/7.2.png" alt="" /></span></div>
@@ -112,13 +107,13 @@
 								
 								<hr>
 								
-								<p>In the next sheet we calculate the countries with <b>Most Number of Deaths,</b> which will be done in the same manner as above, except in place of <b>"New Positive Cases Count"</b> we will use <b>"New Death Count"</b>in its place. Create a <b>new calculated rank</b> field and performed the calculation in the same manner as the previous sheet. After everything is done the sheet will be ready and we can move on to the last sheet.</p>
+								<p>In the next sheet we calculate the countries with <b>Most Number of Deaths, </b> which will be done in the same manner as above, except in place of <b>"New Positive Cases Count"</b> we will use <b>"New Death Count"</b>in its place. Create a <b>new calculated rank</b> field and performed the calculation in the same manner as the previous sheet. After everything is done the sheet will be ready and we can move on to the last sheet.</p>
 							
 								<span class="image fit"><img src="images/6.png" alt="" /></span>
 
 								<hr>
 
-									<p>In the last sheet we will be showing the <b>Spread of Virus per Country</b> and how it grew as weeks passed by. Making this is fairly simple, drag and drop the <b>"Country Short Name"</b> field to the visualization area and Tableau will automatically generate a map and plot all the points on it. Next we want to add the <b>"New positive Cases Count"</b> to the <b>Size</b> mark so we can see which country had more cases, we also need to perform a table calculation on the field in the same manner we did in the previous sheets where we have used the  <b>"New Positive Case Count"</b>field. After that, add the <b>"Report Date"</b> to the pages side bar and select the weeks,format as desired and the sheet is ready.</p>
+									<p>In the last sheet we will be showing the <b>Spread of Virus per Country</b> and how it grew as weeks passed by. Making this is fairly simple, drag and drop the <b>"Country Short Name"</b> field to the visualization area and Tableau will automatically generate a map and plot all the points on it. Next we want to add the <b>"New positive Cases Count"</b> to the <b>Size</b> mark so we can see which country had more cases, we also need to perform a table calculation on the field in the same manner we did in the previous sheets where we have used the <b>"New Positive Case Count"</b>field. After that, add the <b>"Report Date"</b> to the pages side bar and select the weeks; format as desired and the sheet is ready.</p>
 
 									<span class="image fit"><img src="images/5.png" alt="" /></span>
 
